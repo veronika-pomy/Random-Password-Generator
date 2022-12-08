@@ -27,6 +27,7 @@ function generatePassword () {
   console.log(specialChar);
   
   // 2: Validate the input
+  // does this need ot be a function? 
   var valid = true;
   function validateInput () {
     if (lowerCase == false && 
@@ -50,7 +51,7 @@ function generatePassword () {
   }
   validateInput();
 
-  // function needs to stop if valid is false 
+// function needs to stop if valid is false 
  if (valid == false) {
     return "";
   }
@@ -63,7 +64,7 @@ function generatePassword () {
 
   // 3: Generate a random password based on selected criteria
   for (var i = 0; i < passwordLength; i++) {
-        var randomChar = Math.floor(Math.random()*allChars.length);
+        var randomChar = Math.floor(Math.random()*allChars.length); // need to test this agains
         newPassword += allChars[randomChar];
     }
   var generatedPassword = newPassword;
