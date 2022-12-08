@@ -9,22 +9,12 @@
 // When all prompts are answered, the password is generated based on selected criteria 
 // When password is generated it either appears on alert or written on the page
 
-/*
-1. Declare variables for input that will be selected by the user: lowerCase, upperCase, numericChar, specialChar
-2. Declare variables for selected length by the user: passwordLength
-3. Create user promt that prompts the user to select;
-  3.1. Length of user password 
-  3.2. Character types: 4 options
-4. Write function that validates 
-  4.1. That password length between 8 and 128 characters is selected by user
-    4.1.1. If the user enters anything other than number it should show an error and repeat again 
-  4.2. That at least one character type was selected, if not - it prompts the user again to select at lest one type, if yes - proceeds to generate password based on the criteria 
-5. Write code to generate a random password based on criteria selected 
-6. Have password displayed on page 
-*/
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+// const upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+// const lowerChar = "abcdefghijklmnopqrstuvwxyz";
+// const numChar = "0123456789";
+// const specialChar = "!#$%&'()*+,-./:;<=>?@[^_`{|}~"; 
 
 // Write generatePassword function 
 function generatePassword () {
@@ -66,7 +56,19 @@ function generatePassword () {
   console.log(valid);
 
   // 3: Generate a random password based on selected criteria
-  var generatedPassword = "this is your new password";
+  // Working only with Upper char for now
+
+  // Need to figure out a way to select which string to use 
+  // set one long var for pwd string
+  // depensing on which statements come back as true set a range og which chars js can select
+
+for (let i = 0; i < passwordLength; i++) {
+      var randomChar = Math.floor(Math.random()*upperChar.length);
+      newPassword += upperChar[randomChar];
+  }
+  console.log(newPassword);
+
+  var generatedPassword = newPassword;
   return generatedPassword;
 }
 
