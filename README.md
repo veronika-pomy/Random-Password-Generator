@@ -38,7 +38,7 @@ This mock-up demonstrates the functionality of user prompts using the first prom
 
 ## Application link
 
-[Password Generator](ENTHER PATH TO THE DEPLOYED APP)
+[Check out the Password Generator here.](https://veronika-pomy.github.io/password-generator/)
 
 <p align="right">(<a href="#secure-password-generator-app">back to top</a>)</p>
 
