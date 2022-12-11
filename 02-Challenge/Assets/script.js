@@ -1,47 +1,31 @@
-// TO DO: remove console.log
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 const lChars = "abcdefghijklmnopqrstuvwxyz";
 const uChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const nChars = "0123456789";
-const sChars = "!#$%&'()*+,-./:;<=>?@[^_`{|}~";
-var allChars = "";
-var newPassword = "";
+const sChars = "!#$%&\"'\\]()*+,-./:;<=>?@[^_`{|}~"; 
+// Escape character used to include \ and " symbols in the list of special characters to be used for generating password.
 
 // Write generatePassword function 
 function generatePassword () {  
-  // 1: Promt user for the pass criteria
+  var newPassword = "";
+  var allChars = "";
+  // 1: Promt user for the pass criteria.
   const passwordLength = window.prompt("How long would you like your password to be?");
-  // Try with stopping it here 
-  // console.log(passwordLength);
-  // if ((isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128)) {
-  //   return "";
-  // }
   const lowerCase = window.confirm("Would you like your password to include lowercase letters?");
-  console.log(lowerCase);
   const upperCase = window.confirm("Would you like your password to include upper letters?");
-  console.log(upperCase);
   const numChar = window.confirm("Would you like your password to include numbers?");
-  console.log(numChar);
   const specialChar = window.confirm("Would you like your password to include special characters?");
-  console.log(specialChar);
-  
-  // 2: Validate the input
-  // does this need ot be a function? 
+
+  // 2: Validate the input.
   var valid = true;
   function validateInput () {
-    if (lowerCase == false && 
-        upperCase == false && 
-        numChar == false && 
-        specialChar == false) {
+    if (lowerCase == false && upperCase == false && numChar == false && specialChar == false) {
       valid = false; 
-      window.alert("Error! Please select at least one character type for your password. Please try again.");
+      window.alert("Error! Select at least one character type for your password. Please try again.");
     }
-    if (passwordLength == " " ||
-       passwordLength < 8 || 
-       passwordLength > 128) {
+    if (passwordLength == " " || passwordLength < 8 || passwordLength > 128) {
       valid = false; 
-      window.alert("Error! Please select a password length between 8 and 128 characters. Please try again.");
+      window.alert("Error! Select a password length between 8 and 128 characters. Please try again.");
     }
     if ((isNaN(passwordLength))) {
       valid = false; 
@@ -51,20 +35,24 @@ function generatePassword () {
   }
   validateInput();
 
-// function needs to stop if valid is false 
+// Stop function if valid is false.
  if (valid == false) {
     return "";
   }
 
-  // Select which password strings to use depending on users choice 
+  // Select which password strings to use depending on users choice. Used (?) operatior to shorten if ... else statements.
   (lowerCase) ? allChars += lChars : "";
   (upperCase) ? allChars += uChars : "";
   (numChar) ? allChars += nChars : "";
   (specialChar) ? allChars += sChars : "";
 
-  // 3: Generate a random password based on selected criteria
+  // 3: Generate a random password based on selected criteria.
+    // 3.1. Generate a random number between 0 - 0.99 and multiply it by the length of the string that the random characters will be chosen from. Since the index starts with 0 this ensures that no index outside of the range can be chosen.
+    // 3.2. Use Math.floor to get rid of decimals. 
+    // 3.3. Use the index to select a random letter from the string and concatenate it to generate a new string which will be the new password. 
+    // 3.4. Repeat the process using a for loop until the desired length is reached. 
   for (var i = 0; i < passwordLength; i++) {
-        var randomChar = Math.floor(Math.random()*allChars.length); // need to test this agains
+        var randomChar = Math.floor(Math.random()*allChars.length); 
         newPassword += allChars[randomChar];
     }
   var generatedPassword = newPassword;
