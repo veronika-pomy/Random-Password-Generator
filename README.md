@@ -10,13 +10,13 @@ The scope of this project was to create a javascript code to generate a secure a
 
 ## Functionality 
 
-The following critera include functionalities requiered: 
+The following criteria include functionalities required: 
 
-- The appcilation includes a "Generate Password" button
+- The application includes a "Generate Password" button
 - When the "Generate Password" button is clicked, a user is presented with a series of prompts specifying desired password criteria 
-- Prompts specify password length, upper, lower, numeric and special characters 
+- Prompts specify password length, upper, lower, numeric, and special characters 
 - The app validates that the length of the password is between 8 and 128 characters
-- The app validates that the user picked at least one of the aphanumeric criteria
+- The app validates that the user picked at least one of the alphanumeric criteria
 - The app generates a password that matches the criteria selected by the user
 - A new secure password is displayed on the page
 
@@ -26,7 +26,7 @@ The following critera include functionalities requiered:
 
 ## Demo 
 
-This mock-up demonstrates the overall design of the applicaton that a user is presented with.
+This mock-up demonstrates the overall design of the application that a user is presented with.
 
 ![The Password Generator application displays a red button to "Generate Password".](./02-Challenge/Assets/imgs/generate-password-demo.png)
 
