@@ -26,11 +26,11 @@ The following criteria include functionalities required:
 
 This mock-up demonstrates the overall design of the application that a user is presented with.
 
-![The Password Generator application displays a red button to "Generate Password".](./Assets/imgs/generate-password-demo.png)
+![The Password Generator application displays a red button to "Generate Password".](./assets/imgs/generate-password-demo.png)
 
 This mock-up demonstrates the functionality of user prompts using the first prompt for password length as an example.
 
-![The Password Generator application displays a promt functionality.](./Assets/imgs/generate-password-prompt-demo.png)
+![The Password Generator application displays a promt functionality.](./assets/imgs/generate-password-prompt-demo.png)
 
 <p align="right">(<a href="#secure-password-generator-app">back to top</a>)</p>
 
